@@ -1,13 +1,28 @@
 {
     "name": "valorin/zf2-phinx-module",
     "description": "Integrates the Phinx database migration tool into a ZF2 application.",
-    "require": {
-        "robmorgan/phinx": "v0.1.6"
-    },
+    "license": "BSD-3-Clause",
+    "type": "library",
+    "keywords": [
+        "zf2", "phinx", "module"
+    ],
+    "homepage": "https://github.com/valorin/zf2-phinx-module",
     "authors": [
         {
             "name": "Stephen Rees-Carter",
-            "email": "stephen@rees-carter.net"
+            "email": "stephen@rees-carter.net",
+            "homepage": "http://stephen.rees-carter.net/"
         }
-    ]
+    ],
+    "autoload": {
+        "psr-0": {
+            "PhinxModule": "src/"
+        },
+        "classmap": [
+            "./Module.php"
+        ]
+    },
+    "require": {
+        "robmorgan/phinx": "v0.1.6"
+    }
 }
