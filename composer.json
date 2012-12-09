@@ -1,0 +1,13 @@
+{
+    "name": "valorin/zf2-phinx-module",
+    "description": "Integrates the Phinx database migration tool into a ZF2 application.",
+    "require": {
+        "robmorgan/phinx": "v0.1.6"
+    },
+    "authors": [
+        {
+            "name": "Stephen Rees-Carter",
+            "email": "stephen@rees-carter.net"
+        }
+    ]
+}
