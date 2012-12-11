@@ -78,12 +78,16 @@ class Module implements
     {
         return array(
             $console->colorize('Phinx module commands', Colour::CYAN),
-            $console->colorize('phinx sync', Colour::GREEN)
+            $console->colorize('phinx sync [--migrations=]', Colour::GREEN)
                 => "Sync application database credentials with Phinx.",
             $console->colorize('phinx help', Colour::GREEN)
                 => "List the Phinx console usage information.",
             $console->colorize('phinx <commands>', Colour::GREEN)
                 => "Run the specified Phinx command (run 'phinx help' for the commands list).",
+            Array(
+                $console->colorize('--migrations', Colour::YELLOW),
+                "Location to store migration classes in (default ./data/migrations)."
+            ),
         );
     }
 

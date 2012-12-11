@@ -23,6 +23,6 @@
         ]
     },
     "require": {
-        "robmorgan/phinx": "v0.1.6"
+        "robmorgan/phinx": "0.1.*"
     }
 }
