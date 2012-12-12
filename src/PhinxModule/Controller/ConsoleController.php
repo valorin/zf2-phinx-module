@@ -2,6 +2,7 @@
 
 namespace PhinxModule\Controller;
 
+use Phinx\Console\PhinxApplication;
 use Symfony\Component\Yaml\Yaml;
 use Zend\Console\Request as ConsoleRequest;
 use Zend\Mvc\Controller\AbstractActionController;
@@ -78,6 +79,79 @@ class ConsoleController extends AbstractActionController
 
         file_put_contents($config['phinx-module']['config'], $yaml);
 
-        return "Phing config file written: {$config['phinx-module']['config']}\n";
+        return "Phinx config file written: {$config['phinx-module']['config']}\n";
+    }
+
+
+    /**
+     * Display phinx init disabled message
+     *
+     * @return String
+     * @throws RuntimeException
+     */
+    public function initAction()
+    {
+        /**
+         * Enforce valid console request
+         */
+        $request = $this->getRequest();
+        if (!$request instanceof ConsoleRequest){
+            throw new \RuntimeException('You can only use this action from a console!');
+        }
+
+
+        return "'phinx init' disabled, please run 'phinx sync' to use ZF2 DB credentials.\n";
+    }
+
+
+    /**
+     * Display phinx help text
+     *
+     * @return String
+     * @throws RuntimeException
+     */
+    public function commandAction()
+    {
+        /**
+         * Enforce valid console request
+         */
+        $request = $this->getRequest();
+        if (!$request instanceof ConsoleRequest){
+            throw new \RuntimeException('You can only use this action from a console!');
+        }
+
+
+        /**
+         * Retrieving config file
+         */
+        $config = $this->getServiceLocator()->get('config');
+        $config = $config['phinx-module']['config'];
+
+
+        /**
+         * Update argv's
+         */
+        $argv = $_SERVER['argv'];
+        array_shift($_SERVER['argv']);
+
+
+        /**
+         * Add config param as required
+         */
+        if (!in_array($_SERVER['argv'][1], Array('init', 'list'))) {
+            $_SERVER['argv'][] = "--configuration={$config}";
+        }
+
+
+        /**
+         * Run Phinx
+         */
+        include getcwd()."/vendor/bin/phinx";
+
+
+        /**
+         * Shift argv's
+         */
+        $_SERVER['argv'] = $argv;
     }
 }
