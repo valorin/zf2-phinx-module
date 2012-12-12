@@ -21,26 +21,20 @@ The easiest way to install the module is using Composer (<http://getcomposer.org
     ./composer.phar require "valorin/zf2-phinx-module":"0.*"
     ```
  
-3. Install composer depenancies:
-
-  ```
-  ./composer.phar install
-  ```
- 
-4. Update `./config/application.config.php` and add enable the `PhinxModule`:
+3. Update `./config/application.config.php` and add enable the `PhinxModule`:
     
-  ```php
-  <?php
-  return array(
-      'modules' => array(
-          'Application',
-          // ...
-          'PhinxModule',
-      ),
-  );
-  ```
+    ```php
+    <?php
+    return array(
+        'modules' => array(
+            'Application',
+            // ...
+            'PhinxModule',
+        ),
+    );
+    ```
     
-5. Execute Phinx:
+4. Run the application console to see usage information:
     
     ```
     valorin@gandalf ~/workspace/project $ php ./public/index.php 
