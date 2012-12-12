@@ -138,7 +138,7 @@ class ConsoleController extends AbstractActionController
         /**
          * Add config param as required
          */
-        if (!in_array($_SERVER['argv'][1], Array('init', 'list'))) {
+        if (isset($_SERVER['argv'][1]) && !in_array($_SERVER['argv'][1], Array('init', 'list'))) {
             $_SERVER['argv'][] = "--configuration={$config}";
         }
 
