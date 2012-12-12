@@ -65,7 +65,7 @@ class ConsoleController extends AbstractActionController
                     'host'    => $matches[3],
                     'name'    => $matches[2],
                     'user'    => $config['db']['username'],
-                    'pass'    => $config['db']['password'].",",
+                    'pass'    => $config['db']['password'],
                     'port'    => 3306,
                 ),
             ),
