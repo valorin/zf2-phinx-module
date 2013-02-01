@@ -11,7 +11,6 @@
 namespace PhinxModule;
 
 use Zend\Console\Adapter\AdapterInterface as Console;
-use Zend\Console\ColorInterface as Colour;
 use Zend\ModuleManager\Feature\ConsoleBannerProviderInterface;
 use Zend\ModuleManager\Feature\ConsoleUsageProviderInterface;
 use Zend\ModuleManager\Feature\AutoloaderProviderInterface;
@@ -54,13 +53,8 @@ class Module implements
         /**
          * Output version
          */
-        $status = $console->colorize("=> ", Colour::GREEN)
-                 .$console->colorize("Phinx ", Colour::CYAN)
-                 .$console->colorize($version, Colour::MAGENTA)
-                 ."\n"
-                 .$console->colorize("=> ", Colour::GREEN)
-                 .$console->colorize("Phinx module ", Colour::CYAN)
-                 .$console->colorize("v".self::VERSION, Colour::MAGENTA);
+        $status = "=> Phinx {$version}\n"
+                 ."=> Phinx module v".self::VERSION;
 
         return $status;
     }
@@ -75,21 +69,13 @@ class Module implements
     public function getConsoleUsage(Console $console)
     {
         return array(
-            $console->colorize('Phinx module commands', Colour::CYAN),
-            $console->colorize('phinx sync ', Colour::GREEN).$console->colorize('[--migrations=]', Colour::YELLOW)
-                => "Sync application database credentials with Phinx.",
-            $console->colorize('phinx', Colour::GREEN)
-                => "List the Phinx console usage information.",
-            $console->colorize('phinx ', Colour::GREEN).$console->colorize('<phinx commands>', Colour::YELLOW)
-                => "Run the specified Phinx command (run 'phinx' for the commands list).",
-            Array(
-                $console->colorize('--migrations', Colour::YELLOW),
-                "Location to store migration classes in (default ./data/migrations).",
-            ),
-            Array(
-                $console->colorize('<phinx commands>', Colour::YELLOW),
-                "Any support Phinx commands - will be passed through to Phinx as-is."
-            ),
+            'Phinx module commands',
+            'phinx sync [--migrations=]' => "Sync application database credentials with Phinx.",
+            'phinx'                      => "List the Phinx console usage information.",
+            'phinx <phinx commands>'     => "Run the specified Phinx command (run 'phinx' for the commands list).",
+
+            Array('--migrations', "Location to store migration classes in (default ./data/migrations)."),
+            Array('<phinx commands>', "Any support Phinx commands - will be passed through to Phinx as-is."),
         );
     }
 
