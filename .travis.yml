@@ -6,6 +6,6 @@ php:
   - 5.4
   - 5.5
 script:
-    - "find ./src/ -name "*.php" -print0 | xargs -0 -n1 php -l"
+    - "find ./src/ -name \"*.php\" -print0 | xargs -0 -n1 php -l"
     - "./vendor/bin/phpcs --standard=PSR2 ./src/"
     
