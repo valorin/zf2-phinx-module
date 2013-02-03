@@ -2,7 +2,7 @@ before_script:
     - "mkdir -p ~/.composer"
     - cp ./.travis.composer.config.json ~/.composer/config.json
     - composer self-update
-    - composer --no-interaction install --dev
+    - composer install --dev
 language: php
 php:
   - 5.3
