@@ -1,11 +1,10 @@
 <?php
 /**
- * ISLE - Intelligent Shopping List gEnerator
+ * ZF2 Phinx Module
  *
- * Copyright (c) 2012, Stephen Rees-Carter - stephen@rees-carter.net
- * http://stephen.rees-carter.net/
- *
- * All rights reserved. Unauthorised distribution is prohibited.
+ * @link      https://github.com/valorin/zf2-phinx-module
+ * @copyright Copyright (c) 2012-2013 Stephen Rees-Carter <http://stephen.rees-carter.net/>
+ * @license   See LICENCE.txt - New BSD License
  */
 
 namespace PhinxModule;
@@ -25,7 +24,7 @@ class Module implements
     /**
      * @var string
      */
-    const VERSION = '0.0.2';
+    const VERSION = '0.0.3';
 
 
     /**

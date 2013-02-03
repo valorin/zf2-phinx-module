@@ -1,4 +1,11 @@
 <?php
+/**
+ * ZF2 Phinx Module
+ *
+ * @link      https://github.com/valorin/zf2-phinx-module
+ * @copyright Copyright (c) 2012-2013 Stephen Rees-Carter <http://stephen.rees-carter.net/>
+ * @license   See LICENCE.txt - New BSD License
+ */
 return array(
     'controllers' => array(
         'invokables' => array(
