@@ -23,5 +23,8 @@
     },
     "require": {
         "robmorgan/phinx": "~0"
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "*"
     }
 }

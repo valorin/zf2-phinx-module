@@ -15,7 +15,7 @@ use Zend\Console\Request as ConsoleRequest;
 use Zend\Mvc\Controller\AbstractActionController;
 
 class ConsoleController extends AbstractActionController
-{
+
     /**
      * Sync database credentials with phinx.yml config
      *

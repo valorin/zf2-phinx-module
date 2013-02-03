@@ -1,0 +1,284 @@
+{
+    "hash": "781ffcaa2297938e7afdd8992da681aa",
+    "packages": [
+        {
+            "name": "robmorgan/phinx",
+            "version": "v0.2.0",
+            "source": {
+                "type": "git",
+                "url": "http://github.com/robmorgan/phinx.git",
+                "reference": "v0.2.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/robmorgan/phinx/archive/v0.2.0.zip",
+                "reference": "v0.2.0",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2",
+                "symfony/class-loader": "2.*",
+                "symfony/config": "2.*",
+                "symfony/console": "2.*",
+                "symfony/yaml": "2.*"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "3.7.*"
+            },
+            "time": "2013-01-13 12:23:52",
+            "bin": [
+                "bin/phinx"
+            ],
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Phinx": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Rob Morgan",
+                    "email": "robbym@gmail.com",
+                    "homepage": "http://robmorgan.id.au"
+                }
+            ],
+            "description": "Phinx makes it ridiculousy easy to manage the database migrations for your PHP app.",
+            "homepage": "http://phinx.org",
+            "keywords": [
+                "database",
+                "database migrations",
+                "db",
+                "migrations",
+                "phinx"
+            ]
+        },
+        {
+            "name": "symfony/class-loader",
+            "version": "v2.1.7",
+            "target-dir": "Symfony/Component/ClassLoader",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/ClassLoader",
+                "reference": "v2.1.7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/symfony/ClassLoader/archive/v2.1.7.zip",
+                "reference": "v2.1.7",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "require-dev": {
+                "symfony/finder": "2.1.*"
+            },
+            "time": "2013-01-09 08:51:07",
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Symfony\\Component\\ClassLoader": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "http://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony ClassLoader Component",
+            "homepage": "http://symfony.com"
+        },
+        {
+            "name": "symfony/config",
+            "version": "v2.1.7",
+            "target-dir": "Symfony/Component/Config",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/Config",
+                "reference": "v2.1.7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/symfony/Config/archive/v2.1.7.zip",
+                "reference": "v2.1.7",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "time": "2013-01-09 08:51:07",
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Symfony\\Component\\Config": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "http://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Config Component",
+            "homepage": "http://symfony.com"
+        },
+        {
+            "name": "symfony/console",
+            "version": "v2.1.7",
+            "target-dir": "Symfony/Component/Console",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/Console",
+                "reference": "v2.1.7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/symfony/Console/archive/v2.1.7.zip",
+                "reference": "v2.1.7",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "time": "2013-01-17 15:20:05",
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Symfony\\Component\\Console": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "http://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Console Component",
+            "homepage": "http://symfony.com"
+        },
+        {
+            "name": "symfony/yaml",
+            "version": "v2.1.7",
+            "target-dir": "Symfony/Component/Yaml",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/Yaml",
+                "reference": "v2.1.7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/symfony/Yaml/archive/v2.1.7.zip",
+                "reference": "v2.1.7",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "time": "2013-01-17 21:21:51",
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Symfony\\Component\\Yaml": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "http://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Yaml Component",
+            "homepage": "http://symfony.com"
+        }
+    ],
+    "packages-dev": [
+        {
+            "name": "squizlabs/php_codesniffer",
+            "version": "1.4.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/squizlabs/PHP_CodeSniffer",
+                "reference": "1.4.3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/squizlabs/PHP_CodeSniffer/archive/1.4.3.zip",
+                "reference": "1.4.3",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.1.2"
+            },
+            "time": "2012-12-04 03:15:31",
+            "bin": [
+                "scripts/phpcs"
+            ],
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "."
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Greg Sherwood",
+                    "role": "lead"
+                }
+            ],
+            "description": "PHP_CodeSniffer tokenises PHP, JavaScript and CSS files and detects violations of a defined set of coding standards.",
+            "homepage": "http://www.squizlabs.com/php-codesniffer",
+            "keywords": [
+                "phpcs",
+                "standards"
+            ]
+        }
+    ],
+    "aliases": [
+
+    ],
+    "minimum-stability": "stable",
+    "stability-flags": [
+
+    ]
+}
