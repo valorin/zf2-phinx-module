@@ -22,9 +22,9 @@
         ]
     },
     "require": {
-        "robmorgan/phinx": "~0"
+        "robmorgan/phinx": "*"
     },
     "require-dev": {
-        "squizlabs/php_codesniffer": "*"
+        "squizlabs/php_codesniffer": "dev-master"
     }
 }

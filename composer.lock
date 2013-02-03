@@ -1,5 +1,5 @@
 {
-    "hash": "781ffcaa2297938e7afdd8992da681aa",
+    "hash": "e60d36e2773e7005a4d6b87af2d4cd38",
     "packages": [
         {
             "name": "robmorgan/phinx",
@@ -231,29 +231,52 @@
     "packages-dev": [
         {
             "name": "squizlabs/php_codesniffer",
-            "version": "1.4.3",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/squizlabs/PHP_CodeSniffer",
-                "reference": "1.4.3"
+                "reference": "c7e4be4f9b045b8f46cc36af7da3bdda9bb4b030"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/squizlabs/PHP_CodeSniffer/archive/1.4.3.zip",
-                "reference": "1.4.3",
+                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/c7e4be4f9b045b8f46cc36af7da3bdda9bb4b030",
+                "reference": "c7e4be4f9b045b8f46cc36af7da3bdda9bb4b030",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.1.2"
             },
-            "time": "2012-12-04 03:15:31",
+            "time": "2013-01-31 21:55:45",
             "bin": [
                 "scripts/phpcs"
             ],
             "type": "library",
             "autoload": {
                 "classmap": [
-                    "."
+                    "CodeSniffer.php",
+                    "CodeSniffer/CLI.php",
+                    "CodeSniffer/Exception.php",
+                    "CodeSniffer/File.php",
+                    "CodeSniffer/MultiFileSniff.php",
+                    "CodeSniffer/Report.php",
+                    "CodeSniffer/Reporting.php",
+                    "CodeSniffer/Sniff.php",
+                    "CodeSniffer/Tokens.php",
+                    "CodeSniffer/Reports/",
+                    "CodeSniffer/CommentParser/",
+                    "CodeSniffer/Tokenizers/",
+                    "CodeSniffer/DocGenerators/",
+                    "CodeSniffer/Standards/AbstractPatternSniff.php",
+                    "CodeSniffer/Standards/AbstractScopeSniff.php",
+                    "CodeSniffer/Standards/AbstractVariableSniff.php",
+                    "CodeSniffer/Standards/IncorrectPatternException.php",
+                    "CodeSniffer/Standards/Generic/Sniffs/",
+                    "CodeSniffer/Standards/MySource/Sniffs/",
+                    "CodeSniffer/Standards/PEAR/Sniffs/",
+                    "CodeSniffer/Standards/PSR1/Sniffs/",
+                    "CodeSniffer/Standards/PSR2/Sniffs/",
+                    "CodeSniffer/Standards/Squiz/Sniffs/",
+                    "CodeSniffer/Standards/Zend/Sniffs/"
                 ]
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -278,7 +301,7 @@
 
     ],
     "minimum-stability": "stable",
-    "stability-flags": [
-
-    ]
+    "stability-flags": {
+        "squizlabs/php_codesniffer": 20
+    }
 }
