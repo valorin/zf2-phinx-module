@@ -28,7 +28,7 @@ class ConsoleController extends AbstractActionController
          * Enforce valid console request
          */
         $request = $this->getRequest();
-        if (!$request instanceof ConsoleRequest){
+        if (!$request instanceof ConsoleRequest) {
             throw new \RuntimeException('You can only use this action from a console!');
         }
 
@@ -102,7 +102,7 @@ class ConsoleController extends AbstractActionController
          * Enforce valid console request
          */
         $request = $this->getRequest();
-        if (!$request instanceof ConsoleRequest){
+        if (!$request instanceof ConsoleRequest) {
             throw new \RuntimeException('You can only use this action from a console!');
         }
 
@@ -123,7 +123,7 @@ class ConsoleController extends AbstractActionController
          * Enforce valid console request
          */
         $request = $this->getRequest();
-        if (!$request instanceof ConsoleRequest){
+        if (!$request instanceof ConsoleRequest) {
             throw new \RuntimeException('You can only use this action from a console!');
         }
 

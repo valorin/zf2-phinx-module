@@ -1,6 +1,6 @@
 ZF2 Phinx Module
 ================
-*Created by [Stephen Rees-Carter](http://stephen.rees-carter.net/), version 0.0.3.*
+*Created by [Stephen Rees-Carter](http://stephen.rees-carter.net/), version 0.0.3.* [![Build Status](https://travis-ci.org/valorin/zf2-phinx-module.png?branch=master)](https://travis-ci.org/valorin/zf2-phinx-module)
 
 [ZF2](http://framework.zend.com/) module to integrate the [Phinx database migration tool](https://github.com/robmorgan/phinx) into a ZF2 application console. It provides a way to sync the application DB connections with Phinx, and run each of the Phinx commands easily.
 
