@@ -46,7 +46,7 @@ class ConsoleController extends AbstractActionController
         /**
          * Load Migrations dir
          */
-        $migrations = $request->getParam('migrations', $config['phinx-module']['migrations']);
+        $migrations = $request->getParam('migrations_dir', $config['phinx-module']['migrations']);
 
 
         /**

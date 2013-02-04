@@ -26,7 +26,7 @@ return array(
                 ),
                 'phinx-sync' => array(
                     'options' => array(
-                        'route'    => 'phinx sync [--migrations=]',
+                        'route'    => 'phinx sync [--migrations_dir=]',
                         'defaults' => array(
                             'controller' => 'PhinxModule\Controller\Console',
                             'action'     => 'sync'

@@ -69,11 +69,11 @@ class Module implements
     {
         return array(
             'Phinx module commands',
-            'phinx sync [--migrations=]' => "Sync application database credentials with Phinx.",
-            'phinx'                      => "List the Phinx console usage information.",
-            'phinx <phinx commands>'     => "Run the specified Phinx command (run 'phinx' for the commands list).",
+            'phinx sync [--migrations_dir=]' => "Sync application database credentials with Phinx.",
+            'phinx'                          => "List the Phinx console usage information.",
+            'phinx <phinx commands>'         => "Run the specified Phinx command (run 'phinx' for the commands list).",
 
-            Array('--migrations', "Location to store migration classes in (default ./data/migrations)."),
+            Array('--migrations_dir', "Location to store migration classes in (default ./data/migrations)."),
             Array('<phinx commands>', "Any support Phinx commands - will be passed through to Phinx as-is."),
         );
     }
