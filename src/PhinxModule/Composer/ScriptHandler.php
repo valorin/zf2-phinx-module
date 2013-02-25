@@ -8,7 +8,7 @@
  */
 namespace PhinxModule\Composer;
 
-require 'init_autoloader.php';
+require_once 'init_autoloader.php';
 
 use Composer\Script\Event;
 use PhinxModule\Manager\PhinxManager;
@@ -27,8 +27,8 @@ class ScriptHandler
 
         $zfApp = ZfApp::init(require 'config/application.config.php');
         $manager = new PhinxManager(
-                $zfApp->getServiceManager()->get('console'),
-                $zfApp->getServiceManager()->get('config')
+            $zfApp->getServiceManager()->get('console'),
+            $zfApp->getServiceManager()->get('config')
         );
 
         $manager->setup(false, true);
@@ -44,8 +44,8 @@ class ScriptHandler
     {
         $zfApp = ZfApp::init(require 'config/application.config.php');
         $manager = new PhinxManager(
-                $zfApp->getServiceManager()->get('console'),
-                $zfApp->getServiceManager()->get('config')
+            $zfApp->getServiceManager()->get('console'),
+            $zfApp->getServiceManager()->get('config')
         );
 
         $argv = $_SERVER['argv'];
