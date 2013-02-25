@@ -5,6 +5,8 @@
  * @link      https://github.com/valorin/zf2-phinx-module
  * @copyright Copyright (c) 2012-2013 Stephen Rees-Carter <http://stephen.rees-carter.net/>
  * @license   See LICENCE.txt - New BSD License
+ *
+ * @codingStandardsIgnoreFile
  */
 namespace PhinxModule\Composer;
 
@@ -24,7 +26,6 @@ class ScriptHandler
      */
     public static function setup(Event $event)
     {
-
         $zfApp = ZfApp::init(require 'config/application.config.php');
         $manager = new PhinxManager(
             $zfApp->getServiceManager()->get('console'),
