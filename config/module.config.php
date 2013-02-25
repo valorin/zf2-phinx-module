@@ -33,6 +33,15 @@ return array(
                         ),
                     ),
                 ),
+                'phinx_setup' => array(
+                    'options' => array(
+                        'route'    => 'phinx setup [--overwrite]',
+                        'defaults' => array(
+                            'controller' => 'PhinxModule\Controller\Console',
+                            'action'     => 'setup',
+                        ),
+                    ),
+                ),
                 'phinx-init' => array(
                     'options' => array(
                         'route'    => 'phinx init',
@@ -46,7 +55,8 @@ return array(
         ),
     ),
     'phinx-module' => Array(
-        'config'     => getcwd().'/config/phinx.yml',
-        'migrations' => getcwd().'/data/migrations',
+        'zf2-config'   => getcwd().'/config/autoload/phinx.local.php',
+        'phinx-config' => getcwd().'/config/phinx.yml',
+        'migrations'   => getcwd().'/data/migrations',
     ),
 );
