@@ -163,8 +163,12 @@ class PhinxManager implements ColorInterface
          * Write Phinx Config
          */
         $this->writePhinxConfig(
-            $matches[1], $matches[3], $this->config['db']['username'],
-            $this->config['db']['password'], $matches[2], $port,
+            $matches[1],
+            $matches[3],
+            $this->config['db']['username'],
+            $this->config['db']['password'],
+            $matches[2],
+            $port,
             $migrations
         );
 
