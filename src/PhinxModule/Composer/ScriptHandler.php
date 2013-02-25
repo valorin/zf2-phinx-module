@@ -6,10 +6,14 @@
  * @copyright Copyright (c) 2012-2013 Stephen Rees-Carter <http://stephen.rees-carter.net/>
  * @license   See LICENCE.txt - New BSD License
  */
-
 namespace PhinxModule\Composer;
 
+require 'init_autoloader.php';
+
 use Composer\Script\Event;
+use PhinxModule\Manager\PhinxManager;
+use Zend\Console\Console;
+use Zend\Mvc\Application as ZfApp;
 
 class ScriptHandler
 {
@@ -20,7 +24,14 @@ class ScriptHandler
      */
     public static function setup(Event $event)
     {
-        echo "... setup phinx ...\n";
+
+        $zfApp = ZfApp::init(require 'config/application.config.php');
+        $manager = new PhinxManager(
+                $zfApp->getServiceManager()->get('console'),
+                $zfApp->getServiceManager()->get('config')
+        );
+
+        $manager->setup(false, true);
     }
 
 
@@ -31,6 +42,15 @@ class ScriptHandler
      */
     public static function migrate(Event $event)
     {
-        echo "... migrate phinx ...\n";
+        $zfApp = ZfApp::init(require 'config/application.config.php');
+        $manager = new PhinxManager(
+                $zfApp->getServiceManager()->get('console'),
+                $zfApp->getServiceManager()->get('config')
+        );
+
+        $argv = $_SERVER['argv'];
+        $_SERVER['argv'] = Array('cli', 'phinx', 'migrate');
+        $manager->command();
+        $_SERVER['argv'] = $argv;
     }
 }
