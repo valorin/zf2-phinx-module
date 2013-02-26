@@ -1,0 +1,4 @@
+#!/bin/bash
+
+cd `dirname $0`
+find ../src/ -name "*.php" -print0 | xargs -0 -n1 php -l

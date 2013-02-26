@@ -6,7 +6,6 @@
  * @copyright Copyright (c) 2012-2013 Stephen Rees-Carter <http://stephen.rees-carter.net/>
  * @license   See LICENCE.txt - New BSD License
  *
- * @codingStandardsIgnoreFile
  */
 namespace PhinxModule\Composer;
 

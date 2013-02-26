@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<ruleset name="zf2-phinx-module">
+    <description>ZF2 Phinx Module - Coding Standard</description>
+    <exclude-pattern>src/PhinxModule/Composer/ScriptHandler.php</exclude-pattern>
+    <rule ref="PSR2"/>
+</ruleset>
