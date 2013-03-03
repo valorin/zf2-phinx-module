@@ -102,7 +102,7 @@ class PhinxManager implements ColorInterface
         $config = new Config(
             array(
                 'db' => array(
-                    'dsn'      => "mysql:dbname={$dbname};host={$host}",
+                    'dsn'      => "mysql:host={$host};dbname={$dbname}",
                     'username' => $user,
                     'password' => $pass,
                     'port'     => $port,
@@ -145,7 +145,7 @@ class PhinxManager implements ColorInterface
         /**
          * Extract details from DSN string
          */
-        $dsn = "/^(\w+):dbname=(\w+);host=(\w+)$/i";
+        $dsn = "/^(\w+):host=([^;]+);dbname=(.+)$/i";
         if (!isset($this->config['db']['dsn'])
             || !preg_match($dsn, $this->config['db']['dsn'], $matches)) {
             throw new \RuntimeException("Unable to parse 'db' => 'dsn' connection string!");
@@ -164,10 +164,10 @@ class PhinxManager implements ColorInterface
          */
         $this->writePhinxConfig(
             $matches[1],
-            $matches[3],
+            $matches[2],
             $this->config['db']['username'],
             $this->config['db']['password'],
-            $matches[2],
+            $matches[3],
             $port,
             $migrations
         );
