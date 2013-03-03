@@ -49,10 +49,9 @@ class PhinxManager implements ColorInterface
      * WILL OUTPUT VIA CONSOLE!
      *
      * @param  boolean $overwrite Overwrite existing config
-     * @param  boolean $quiet     Fail quietly
      * @return string
      */
-    public function setup($overwrite = false, $quiet = false)
+    public function setup($overwrite = false)
     {
         /**
          * Output console usage
@@ -70,11 +69,12 @@ class PhinxManager implements ColorInterface
         $zfConfig    = $this->config['phinx-module']['zf2-config'];
         $phinxConfig = $this->config['phinx-module']['phinx-config'];
         if (!$overwrite && (file_exists($zfConfig) || file_exists($phinxConfig))) {
-            if (!$quiet) {
+            if (file_exists($zfConfig) && !file_exists($phinxConfig)) {
+                $this->sync();
+                $this->console->writeLine("ZF2 Config found but Phinx config missing => Config Synced.");
+            } else {
                 $this->console->writeLine("Existing config file(s) found, unable to continue!", self::LIGHT_RED);
                 $this->console->writeLine("Use the --overwrite flag to replace existing config.", self::LIGHT_RED);
-            } else {
-                $this->console->writeLine("Config exists, skipping setup.");
             }
             return;
         }
@@ -182,12 +182,6 @@ class PhinxManager implements ColorInterface
      */
     public function command()
     {
-        /**
-         * Sync
-         */
-        $this->sync();
-
-
         /**
          * Update argv's
          */

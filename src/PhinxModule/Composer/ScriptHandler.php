@@ -31,7 +31,7 @@ class ScriptHandler
             $zfApp->getServiceManager()->get('config')
         );
 
-        $manager->setup(false, true);
+        $manager->setup(false);
     }
 
 
