@@ -88,9 +88,9 @@ class PhinxManager implements ColorInterface
             $this->console->writeLine("MySQL Database connection details:");
             $host   = Prompt\Line::prompt("Hostname? [localhost] ", true) ?: 'localhost';
             $port   = Prompt\Line::prompt("Port? [3306] ", true) ?: 3306;
-            $user   = Prompt\Line::prompt("Username? [isle] ", true) ?: 'isle';
+            $user   = Prompt\Line::prompt("Username? ");
             $pass   = Prompt\Line::prompt("Password? ");
-            $dbname = Prompt\Line::prompt("Database name? [isle] ", true) ?: 'isle';
+            $dbname = Prompt\Line::prompt("Database name? ");
 
             $loop = !Prompt\Confirm::prompt("Save these details? [y/n]");
         }
