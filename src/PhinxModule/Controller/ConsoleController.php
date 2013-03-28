@@ -9,9 +9,7 @@
 
 namespace PhinxModule\Controller;
 
-use Phinx\Console\PhinxApplication;
 use PhinxModule\Manager\PhinxManager;
-use Symfony\Component\Yaml\Yaml;
 use Zend\Console\Request as ConsoleRequest;
 use Zend\Mvc\Controller\AbstractActionController;
 
@@ -21,7 +19,6 @@ class ConsoleController extends AbstractActionController
      * @var PhinxManager
      */
     protected $manager;
-
 
     /**
      * Sync database credentials with phinx.yml config
@@ -39,13 +36,11 @@ class ConsoleController extends AbstractActionController
             throw new \RuntimeException('You can only use this action from a console!');
         }
 
-
         /**
          * Run the Phinx setup
          */
         return $this->getPhinxManager()->setup($request->getParam('overwrite', false));
     }
-
 
     /**
      * Sync database credentials with phinx.yml config
@@ -63,13 +58,11 @@ class ConsoleController extends AbstractActionController
             throw new \RuntimeException('You can only use this action from a console!');
         }
 
-
         /**
          * Run the Phinx sync
          */
         return $this->getPhinxManager()->sync($request->getParam('migrations_dir'));
     }
-
 
     /**
      * Display phinx init disabled message
@@ -87,10 +80,8 @@ class ConsoleController extends AbstractActionController
             throw new \RuntimeException('You can only use this action from a console!');
         }
 
-
         return "'phinx init' disabled, please run 'phinx sync' to use ZF2 DB credentials.\n";
     }
-
 
     /**
      * Display phinx help text
@@ -108,13 +99,11 @@ class ConsoleController extends AbstractActionController
             throw new \RuntimeException('You can only use this action from a console!');
         }
 
-
         /**
          * Run the custom command
          */
         return $this->getPhinxManager()->command();
     }
-
 
     /**
      * Returns the PhinxManager class

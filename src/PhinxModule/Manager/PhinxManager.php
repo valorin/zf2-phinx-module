@@ -9,7 +9,6 @@
 
 namespace PhinxModule\Manager;
 
-use Phinx\Console\PhinxApplication;
 use Symfony\Component\Yaml\Yaml;
 use Zend\Config\Config;
 use Zend\Config\Writer\PhpArray;
@@ -34,12 +33,11 @@ class PhinxManager implements ColorInterface
      */
     protected $console;
 
-
     /**
      * Constructor
      *
-     * @param ConsoleAdapter $console
-     * @param array          $config
+     * @param  ConsoleAdapter   $console
+     * @param  array            $config
      * @throws RuntimeException
      */
     public function __construct(ConsoleAdapter $console, $config = array())
@@ -47,7 +45,6 @@ class PhinxManager implements ColorInterface
         $this->config  = $config;
         $this->console = $console;
     }
-
 
     /**
      * Interactive database setup.
@@ -67,7 +64,6 @@ class PhinxManager implements ColorInterface
 
         $this->console->writeLine("ZF2 Phinx Module - Interactive Setup", self::GREEN);
 
-
         /**
          * Check for existing config
          */
@@ -81,9 +77,9 @@ class PhinxManager implements ColorInterface
                 $this->console->writeLine("Existing config file(s) found, unable to continue!", self::LIGHT_RED);
                 $this->console->writeLine("Use the --overwrite flag to replace existing config.", self::LIGHT_RED);
             }
+
             return;
         }
-
 
         /**
          * Ask questions
@@ -99,7 +95,6 @@ class PhinxManager implements ColorInterface
 
             $loop = !Prompt\Confirm::prompt("Save these details? [y/n]");
         }
-
 
         /**
          * Build config
@@ -120,7 +115,6 @@ class PhinxManager implements ColorInterface
         $this->console->writeLine();
         $this->console->writeLine("ZF2 Config file written: {$zfConfig}");
 
-
         /**
          * Write Phinx config
          */
@@ -129,7 +123,6 @@ class PhinxManager implements ColorInterface
 
         $this->console->writeLine("Phinx Config file written: {$phinxConfig}");
     }
-
 
     /**
      * Sync database credentials with phinx.yml config
@@ -146,7 +139,6 @@ class PhinxManager implements ColorInterface
             throw new \RuntimeException("Cannot find 'db' config section, unable to sync Phinx config!");
         }
 
-
         /**
          * Extract details from DSN string
          */
@@ -156,13 +148,11 @@ class PhinxManager implements ColorInterface
             throw new \RuntimeException("Unable to parse 'db' => 'dsn' connection string!");
         }
 
-
         /**
          * Load variables
          */
         $migrations = $migrations ?: $this->config['phinx-module']['migrations'];
         $port       = isset($this->config['db']['port']) ? $this->config['db']['port'] : 3306;
-
 
         /**
          * Write Phinx Config
@@ -179,7 +169,6 @@ class PhinxManager implements ColorInterface
 
         return "Phinx config file written: {$this->config['phinx-module']['phinx-config']}\n";
     }
-
 
     /**
      * Command pass-through
@@ -214,7 +203,6 @@ class PhinxManager implements ColorInterface
         $_SERVER['argv'] = $argv;
     }
 
-
     /**
      * Writes the Phinx config file with the specified details
      *
@@ -246,7 +234,6 @@ class PhinxManager implements ColorInterface
                 ),
             ),
         );
-
 
         /**
          * Write YAML

@@ -21,7 +21,7 @@ class ScriptHandler
     /**
      * Sets up Phinx environment
      *
-     * @param  Event $event
+     * @param Event $event
      */
     public static function setup(Event $event)
     {
@@ -34,11 +34,10 @@ class ScriptHandler
         $manager->setup(false);
     }
 
-
     /**
      * Migrates the db to latest
      *
-     * @param  Event $event
+     * @param Event $event
      */
     public static function migrate(Event $event)
     {

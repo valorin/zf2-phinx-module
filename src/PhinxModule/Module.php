@@ -26,7 +26,6 @@ class Module implements
      */
     const VERSION = '0.1.0';
 
-
     /**
      * Generates the Console Banner text
      *
@@ -48,7 +47,6 @@ class Module implements
             $version = "v".$match[1];
         }
 
-
         /**
          * Output version
          */
@@ -57,7 +55,6 @@ class Module implements
 
         return $status;
     }
-
 
     /**
      * Define Console Help text
@@ -78,7 +75,6 @@ class Module implements
             Array('<phinx commands>', "Any support Phinx commands - will be passed through to Phinx as-is."),
         );
     }
-
 
     public function getAutoloaderConfig()
     {
