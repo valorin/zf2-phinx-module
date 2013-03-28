@@ -1,6 +1,6 @@
 ZF2 Phinx Module
 ================
-*Created by [Stephen Rees-Carter][src], version 0.1.0.* [![Build Status][travis-img]][travis-url]
+*Created by [Stephen Rees-Carter][src], version 0.1.1.* [![Build Status][travis-img]][travis-url]
 
 [ZF2][zf] module to integrate the [Phinx database migration tool][phinx] into a ZF2 application console.
 It provides a way to sync the application DB connections with Phinx, and run each of the Phinx commands easily.
@@ -43,7 +43,7 @@ The easiest way to install the module is using [Composer][composer].
     = Your ZF2 Application =
     ========================
     => Phinx v0.2.0
-    => Phinx module v0.1.0
+    => Phinx module v0.1.1
 
     Phinx module commands
       index.php phinx setup [--overwrite]    Interactive Phinx setup wizard - will create both config files for you.
@@ -93,6 +93,10 @@ or `composer update`.
 
 Version History
 ---------------
+
+**`v0.1.1` - 2013-03-28**
+- Code refactoring and cleanup of setup and sync commands.
+- Removed reliance on /vendor/bin dir.
 
 **`v0.1.0` - 2013-03-03**
 - Added Interactive setup command.
