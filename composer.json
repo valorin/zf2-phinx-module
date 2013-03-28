@@ -22,9 +22,12 @@
         ]
     },
     "require": {
-        "robmorgan/phinx": "*"
+        "robmorgan/phinx": "*",
+        "symfony/yaml": "2.*",
+        "zendframework/zendframework": "2.*"
     },
     "require-dev": {
+        "fabpot/php-cs-fixer": "dev-master",
         "squizlabs/php_codesniffer": "dev-master"
     }
 }
