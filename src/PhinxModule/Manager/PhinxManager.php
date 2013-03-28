@@ -20,6 +20,11 @@ use Zend\Console\Prompt;
 class PhinxManager implements ColorInterface
 {
     /**
+     * @var string Path to the phinx command, relative to __DIR__
+     */
+    const PHINX_CMD = '/../../../../../robmorgan/phinx/bin/phinx';
+
+    /**
      * @var array
      */
     protected $config;
@@ -200,7 +205,7 @@ class PhinxManager implements ColorInterface
         /**
          * Run Phinx
          */
-        include getcwd()."/vendor/bin/phinx";
+        include __DIR__ .self::PHINX_CMD;
 
 
         /**
