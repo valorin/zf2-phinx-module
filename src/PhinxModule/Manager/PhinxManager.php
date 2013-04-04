@@ -180,27 +180,29 @@ class PhinxManager implements ColorInterface
          * Update argv's
          */
         $argv = $_SERVER['argv'];
-        array_shift($_SERVER['argv']);
+        array_shift($argv);
+        array_shift($argv);
 
 
         /**
          * Add config param as required
          */
-        if (isset($_SERVER['argv'][1]) && !in_array($_SERVER['argv'][1], Array('init', 'list'))) {
-            $_SERVER['argv'][] = "--configuration={$this->config['phinx-module']['phinx-config']}";
+        if (isset($argv[0]) && !in_array($argv[0], Array('init', 'list'))) {
+            $argv[] = "--configuration={$this->config['phinx-module']['phinx-config']}";
         }
+
+
+        /**
+         * Force colours :D
+         * I should make this dynamic somehow...
+         */
+        $argv[] = "--ansi";
 
 
         /**
          * Run Phinx
          */
-        include __DIR__ .self::PHINX_CMD;
-
-
-        /**
-         * Shift argv's
-         */
-        $_SERVER['argv'] = $argv;
+        passthru(__DIR__ .self::PHINX_CMD." ".implode(" ", $argv));
     }
 
     /**

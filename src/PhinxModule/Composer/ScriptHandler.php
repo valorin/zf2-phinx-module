@@ -32,6 +32,8 @@ class ScriptHandler
         );
 
         $manager->setup(false);
+
+        return 0;
     }
 
     /**
@@ -51,5 +53,7 @@ class ScriptHandler
         $_SERVER['argv'] = Array('cli', 'phinx', 'migrate');
         $manager->command();
         $_SERVER['argv'] = $argv;
+
+        return 0;
     }
 }
