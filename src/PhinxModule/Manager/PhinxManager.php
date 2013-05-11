@@ -177,6 +177,12 @@ class PhinxManager implements ColorInterface
     public function command()
     {
         /**
+         * Check migrations dir exists
+         */
+        $this->ensureMigrationsDirExists();
+
+
+        /**
          * Update argv's
          */
         $argv = $_SERVER['argv'];
@@ -243,5 +249,23 @@ class PhinxManager implements ColorInterface
         $yaml = Yaml::dump($phinx);
 
         file_put_contents($this->config['phinx-module']['phinx-config'], $yaml);
+    }
+
+    /**
+     * Ensures the Migrations Directory exists and is writable
+     *
+     */
+    protected function ensureMigrationsDirExists()
+    {
+        $config     = Yaml::parse($this->config['phinx-module']['phinx-config']);
+        $migrations = $config['paths']['migrations'];
+
+        if (!is_dir($migrations)) {
+            mkdir($migrations);
+        }
+
+        if (!is_dir($migrations) || !is_writable($migrations)) {
+            throw new \RuntimeException("Unable to write to the migrations directory: '{$migrations}'");
+        }
     }
 }
