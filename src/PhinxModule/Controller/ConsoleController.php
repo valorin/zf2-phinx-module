@@ -9,9 +9,10 @@
 
 namespace PhinxModule\Controller;
 
-use PhinxModule\Manager\PhinxManager;
-use Zend\Console\Request as ConsoleRequest;
-use Zend\Mvc\Controller\AbstractActionController;
+use PhinxModule\Manager\PhinxManager,
+    Zend\Console\Request as ConsoleRequest,
+    Zend\Mvc\Controller\AbstractActionController,
+    Zend\Console\ColorInterface;
 
 class ConsoleController extends AbstractActionController
 {
@@ -61,7 +62,10 @@ class ConsoleController extends AbstractActionController
         /**
          * Run the Phinx sync
          */
-        return $this->getPhinxManager()->sync($request->getParam('migrations_dir'));
+        $console = $this->getServiceLocator()->get('console');
+        $message = $this->getPhinxManager()->sync($request->getParam('migrations_dir'));
+        $console->write($message, ColorInterface::GREEN);
+        return '';
     }
 
     /**
