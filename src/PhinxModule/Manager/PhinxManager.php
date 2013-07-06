@@ -90,7 +90,7 @@ class PhinxManager implements ColorInterface
             $host   = Prompt\Line::prompt("Hostname? [localhost] ", true) ?: 'localhost';
             $port   = Prompt\Line::prompt("Port? [3306] ", true) ?: 3306;
             $user   = Prompt\Line::prompt("Username? ");
-            $pass   = Prompt\Line::prompt("Password? ");
+            $pass   = Prompt\Line::prompt("Password? [blank]", true);
             $dbname = Prompt\Line::prompt("Database name? ");
 
             $loop = !Prompt\Confirm::prompt("Save these details? [y/n]");
@@ -142,11 +142,9 @@ class PhinxManager implements ColorInterface
         /**
          * Extract details from DSN string
          */
-        $dsn = "/^(\w+):host=([^;]+);dbname=(.+)$/i";
-        if (!isset($this->config['db']['dsn'])
-            || !preg_match($dsn, $this->config['db']['dsn'], $matches)) {
-            throw new \RuntimeException("Unable to parse 'db' => 'dsn' connection string!");
-        }
+        preg_match("/^(\w+):/i", $this->config['db']['dsn'], $adapter);
+        preg_match("/host=([^;]+);?/i", $this->config['db']['dsn'], $host);
+        preg_match("/dbname=([^;]+);?/i", $this->config['db']['dsn'], $dbname);
 
         /**
          * Load variables
@@ -158,11 +156,11 @@ class PhinxManager implements ColorInterface
          * Write Phinx Config
          */
         $this->writePhinxConfig(
-            $matches[1],
-            $matches[2],
+            $adapter[1],
+            $host[1],
             $this->config['db']['username'],
             $this->config['db']['password'],
-            $matches[3],
+            $dbname[1],
             $port,
             $migrations
         );
